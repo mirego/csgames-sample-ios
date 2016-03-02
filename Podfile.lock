@@ -1,0 +1,16 @@
+PODS:
+  - Alamofire (3.2.1)
+  - MCUIColorUtils (1.0.0)
+  - MCUIViewLayout (0.5.1)
+
+DEPENDENCIES:
+  - Alamofire
+  - MCUIColorUtils
+  - MCUIViewLayout
+
+SPEC CHECKSUMS:
+  Alamofire: f11d8624a05f5d39e0c99309b3e600a3ba64298a
+  MCUIColorUtils: 6f11e1702db4ff5419d28cba1e8f7a82dd82d5fe
+  MCUIViewLayout: 0701f55f82982eac83fa0d837a2c248fa2ce10d5
+
+COCOAPODS: 0.39.0
