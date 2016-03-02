@@ -48,6 +48,9 @@ In Xcode, run the project by simply pressing the "Play" button on the top left, 
 
 Once the app starts running in the iOS Simulator, your environment is ready for the competition.
 
+## Support
+
+If you have questions about the project or encounter any problem while configuring your environment, please don't hesistate to contact the [project author](https://github.com/ebelair) or submit an [issue](https://github.com/mirego/csgames16-sample-ios/issues).
 
 ## License
 
