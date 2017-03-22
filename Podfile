@@ -1,11 +1,10 @@
-source 'https://github.com/CocoaPods/Specs.git'
+# Uncomment the next line to define a global platform for your project
+# platform :ios, '9.0'
 
-xcodeproj 'Sample App.xcodeproj'
+target 'Sample App' do
+  use_frameworks!
 
-platform :ios, '8.0'
-
-use_frameworks!
-
-pod 'Alamofire'
-pod 'MCUIColorUtils'
-pod 'MCUIViewLayout'
+  pod 'Alamofire'
+  pod 'MCUIColorUtils'
+  pod 'MCUIViewLayout'
+end

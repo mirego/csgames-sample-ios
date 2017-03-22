@@ -1,4 +1,4 @@
-# CS Games 2016 - Sample iOS App
+# CS Games - Sample iOS App
 
 This project will guide you setting up your environment to build and run a sample iOS application on your local machine.
 
@@ -6,20 +6,20 @@ This project will guide you setting up your environment to build and run a sampl
 
 Make sure you have the following software installed before beginning:
 
-- Latest version of Xcode (7.2.1)
-- Recent version of the iOS SDK (at least 9.0)
+- Latest version of Xcode (8.2.1)
+- Recent version of the iOS SDK (at least 10.0)
 
 You can download these from the [Apple Developer website](https://developer.apple.com/downloads/).
 
-> **NOTE:** You need a Mac computer running OS X 10.10 or later. If you don't have one, you may check our [Sample Android app](https://github.com/mirego/csgames16-sample-android/), which can be run on Windows, Linux and older versions of OS X.
+> **NOTE:** You need a Mac computer running macOS 10.11.5 or later. If you don't have one, you may check our [Sample Android app](https://github.com/mirego/csgames-sample-android/), which can be run on Windows, Linux and older versions of macOS.
 
 ## Getting started
 
 First, clone the project from Github and move into its directory:
 
 ```
-git clone git@github.com:mirego/csgames16-sample-ios.git
-cd csgames16-sample-ios
+git clone git@github.com:mirego/csgames-sample-ios.git
+cd csgames-sample-ios
 ```
 
 This project uses [CocoaPods](https://cocoapods.org/) as a dependency manager. If you don't have it already, install it with the following command:
@@ -44,19 +44,19 @@ open "Sample App.xcworkspace"
 
 In Xcode, run the project by simply pressing the "Play" button on the top left, or by hitting `⌘R`.
 
-<p align="center"><img width="397" src="https://cloud.githubusercontent.com/assets/4378424/13450170/9f948b82-e000-11e5-8270-32423385e7e3.png"></p>
+<p align="center"><img width="397" src="https://cloud.githubusercontent.com/assets/4378424/24180876/d6d2a360-0e8d-11e7-8e31-92df5dfb588a.png"></p>
 
 Once the app starts running in the iOS Simulator, your environment is ready for the competition.
 
 ## Support
 
-If you have questions about the project or encounter any problem while configuring your environment, please don't hesistate to contact the [project author](https://github.com/ebelair) or submit an [issue](https://github.com/mirego/csgames16-sample-ios/issues).
+If you have questions about the project or encounter any problem while configuring your environment, please don't hesistate to contact the [project author](https://github.com/ebelair) or submit an [issue](https://github.com/mirego/csgames-sample-ios/issues).
 
 ## License
 
 This sample app is © 2016 [Mirego](http://www.mirego.com) and may be freely
 distributed under the [New BSD license](http://opensource.org/licenses/BSD-3-Clause).
-See the [`LICENSE.md`](https://github.com/mirego/csgames16-sample-ios/blob/master/LICENSE.md) file.
+See the [`LICENSE.md`](https://github.com/mirego/csgames-sample-ios/blob/master/LICENSE.md) file.
 
 ## About Mirego
 
