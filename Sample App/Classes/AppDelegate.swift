@@ -16,12 +16,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate
     
     let dataSource = DataSource()
 
-    func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool
+    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool
     {
         viewController = ViewController(dataSource: dataSource)
         
-        window = UIWindow(frame: UIScreen.mainScreen().bounds)
-        window!.backgroundColor = UIColor.blackColor()
+        window = UIWindow(frame: UIScreen.main.bounds)
+        window!.backgroundColor = UIColor.black
         window!.rootViewController = viewController!
         window!.makeKeyAndVisible()
         

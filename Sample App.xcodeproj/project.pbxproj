@@ -170,6 +170,7 @@
 				TargetAttributes = {
 					E597DBF91C85FE5500005CDC = {
 						CreatedOnToolsVersion = 7.2.1;
+						LastSwiftMigration = 0820;
 					};
 				};
 			};
@@ -371,6 +372,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "Sample App/Classes/Sample App-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -385,6 +387,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.mirego.sampleapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "Sample App/Classes/Sample App-Bridging-Header.h";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};

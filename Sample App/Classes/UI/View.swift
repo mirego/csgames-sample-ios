@@ -11,34 +11,34 @@ import UIKit
 
 class View: UIView
 {
-    private let weekDayLabel = UILabel()
-    private let dayLabel = UILabel()
-    private let monthLabel = UILabel()
-    private let timeLabel = UILabel()
-    private var labels: [UIView] {
+    fileprivate let weekDayLabel = UILabel()
+    fileprivate let dayLabel = UILabel()
+    fileprivate let monthLabel = UILabel()
+    fileprivate let timeLabel = UILabel()
+    fileprivate var labels: [UIView] {
         return [weekDayLabel, dayLabel, monthLabel, timeLabel]
     }
     
     init()
     {
-        super.init(frame: CGRectZero)
+        super.init(frame: CGRect.zero)
         
-        backgroundColor = UIColor(forHex: "#ad9758")
+        backgroundColor = UIColor(forHex: "#8d644b")
         
-        weekDayLabel.font = UIFont.systemFontOfSize(36, weight: UIFontWeightUltraLight)
-        weekDayLabel.textColor = UIColor.whiteColor()
+        weekDayLabel.font = UIFont.systemFont(ofSize: 36, weight: UIFontWeightUltraLight)
+        weekDayLabel.textColor = UIColor.white
         addSubview(weekDayLabel)
         
-        dayLabel.font = UIFont.systemFontOfSize(80, weight: UIFontWeightMedium)
-        dayLabel.textColor = UIColor.whiteColor()
+        dayLabel.font = UIFont.systemFont(ofSize: 80, weight: UIFontWeightMedium)
+        dayLabel.textColor = UIColor.white
         addSubview(dayLabel)
         
-        monthLabel.font = UIFont.systemFontOfSize(36, weight: UIFontWeightLight)
-        monthLabel.textColor = UIColor.whiteColor()
+        monthLabel.font = UIFont.systemFont(ofSize: 36, weight: UIFontWeightLight)
+        monthLabel.textColor = UIColor.white
         addSubview(monthLabel)
         
-        timeLabel.font = UIFont.systemFontOfSize(30, weight: UIFontWeightMedium)
-        timeLabel.textColor = UIColor.whiteColor()
+        timeLabel.font = UIFont.systemFont(ofSize: 30, weight: UIFontWeightMedium)
+        timeLabel.textColor = UIColor.white
         addSubview(timeLabel)
     }
 
@@ -55,22 +55,22 @@ class View: UIView
         let margin2: CGFloat = 0
         let margin3: CGFloat = 60
         
-        let totalHeight = labels.reduce(0, combine: { $0 + $1.mc_height() }) + margin1 + margin2 + margin3
+        let totalHeight = labels.reduce(0, { $0 + $1.mc_height() }) + margin1 + margin2 + margin3
         
-        weekDayLabel.mc_setPosition(.PositionTopHCenter, withMargins: UIEdgeInsets(top: (mc_height() - totalHeight) / 2, left: 0, bottom: 0, right: 0))
+        weekDayLabel.mc_setPosition(.positionTopHCenter, withMargins: UIEdgeInsets(top: (mc_height() - totalHeight) / 2, left: 0, bottom: 0, right: 0))
         
-        dayLabel.mc_setRelativePosition(.RelativePositionUnderCentered, toView: weekDayLabel, withMargins: UIEdgeInsets(top: margin1, left: 0, bottom: 0, right: 0))
+        dayLabel.mc_setRelativePosition(.relativePositionUnderCentered, to: weekDayLabel, withMargins: UIEdgeInsets(top: margin1, left: 0, bottom: 0, right: 0))
         
-        monthLabel.mc_setRelativePosition(.RelativePositionUnderCentered, toView: dayLabel, withMargins: UIEdgeInsets(top: margin2, left: 0, bottom: 0, right: 0))
+        monthLabel.mc_setRelativePosition(.relativePositionUnderCentered, to: dayLabel, withMargins: UIEdgeInsets(top: margin2, left: 0, bottom: 0, right: 0))
         
-        timeLabel.mc_setRelativePosition(.RelativePositionUnderCentered, toView: monthLabel, withMargins: UIEdgeInsets(top: margin3, left: 0, bottom: 0, right: 0))
+        timeLabel.mc_setRelativePosition(.relativePositionUnderCentered, to: monthLabel, withMargins: UIEdgeInsets(top: margin3, left: 0, bottom: 0, right: 0))
     }
 }
 
 // PMARK: Public
 extension View
 {
-    func refreshDate(weekDay weekDay: String, day: String, month: String, time: String)
+    func refreshDate(weekDay: String, day: String, month: String, time: String)
     {
         weekDayLabel.text = weekDay
         weekDayLabel.sizeToFit()

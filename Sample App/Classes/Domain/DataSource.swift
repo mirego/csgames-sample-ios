@@ -7,6 +7,7 @@
 //
 
 import Alamofire
+import SwiftyJSON
 
 protocol DataSourceDelegate
 {
@@ -15,12 +16,15 @@ protocol DataSourceDelegate
 
 class DataSource: NSObject
 {
-    private let TIME_API_URL = "http://www.timeapi.org/utc/now"
-    private let TIME_FORMAT = "yyyy-MM-dd'T'HH:mm:ssZZZZZ"
+    fileprivate let TIME_API_URL = "https://script.google.com/macros/s/AKfycbyd5AcbAnWi2Yn0xhFRbyzS4qMq1VucMVgVvhul5XqS9HkAyJY/exec?tz=America/Montreal"
     
-    private let dateFormatter = NSDateFormatter()
+    // Example: Mon, 12 Mar 2017 09:41:00 -0400
+    fileprivate let TIME_FORMAT = "EEE, d MMM yyyy HH:mm:ss Z"
+    fileprivate let TIME_LOCALE = Locale(identifier: "en_US")
     
-    private(set) var currentDate: NSDate?
+    fileprivate let dateFormatter = DateFormatter()
+    
+    fileprivate(set) var currentDate: Date?
     var delegate: DataSourceDelegate?
     
     override init()
@@ -28,20 +32,28 @@ class DataSource: NSObject
         super.init()
         
         dateFormatter.dateFormat = TIME_FORMAT
-        dateFormatter.locale = NSLocale.currentLocale()
+        dateFormatter.locale = TIME_LOCALE
     }
     
     func refreshData()
     {
-        Alamofire.request(.GET, TIME_API_URL).responseString {
+        Alamofire.request(TIME_API_URL).responseJSON {
             response in
             
-            if let value = response.result.value, parsedDate = self.dateFormatter.dateFromString(value)
-            {
-                self.currentDate = parsedDate
-            }
-            else
-            {
+            switch response.result {
+            case .success(let json):
+                let json = JSON(json)
+                
+                if let value = json["fulldate"].string, let parsedDate = self.dateFormatter.date(from: value)
+                {
+                    self.currentDate = parsedDate
+                }
+                else
+                {
+                    self.currentDate = nil
+                }
+                
+            case .failure(_):
                 self.currentDate = nil
             }
             

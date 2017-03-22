@@ -7,4 +7,5 @@ target 'Sample App' do
   pod 'Alamofire'
   pod 'MCUIColorUtils'
   pod 'MCUIViewLayout'
+  pod 'SwiftyJSON'
 end

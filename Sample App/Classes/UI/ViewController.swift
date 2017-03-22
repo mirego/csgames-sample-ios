@@ -10,12 +10,12 @@ import UIKit
 
 class ViewController: UIViewController
 {
-    private let TIME_REFRESH_INTERVAL: NSTimeInterval = 1
+    fileprivate let TIME_REFRESH_INTERVAL: TimeInterval = 1
     
-    private let dataSource: DataSource
+    fileprivate let dataSource: DataSource
     
-    private let dateFormatter = NSDateFormatter()
-    private var refreshTimer: NSTimer?
+    fileprivate let dateFormatter = DateFormatter()
+    fileprivate var refreshTimer: Timer?
     
     init(dataSource: DataSource)
     {
@@ -41,23 +41,23 @@ class ViewController: UIViewController
         deleteTimer()
     }
     
-    override func viewWillAppear(animated: Bool)
+    override func viewWillAppear(_ animated: Bool)
     {
         super.viewDidAppear(animated)
         
         createTimer()
     }
     
-    override func viewWillDisappear(animated: Bool)
+    override func viewWillDisappear(_ animated: Bool)
     {
         super.viewWillDisappear(animated)
         
         deleteTimer()
     }
     
-    override func preferredStatusBarStyle() -> UIStatusBarStyle
+    override var preferredStatusBarStyle : UIStatusBarStyle
     {
-        return UIStatusBarStyle.LightContent
+        return UIStatusBarStyle.lightContent
     }
     
     func refreshData()
@@ -69,13 +69,13 @@ class ViewController: UIViewController
 // PMARK: Private
 extension ViewController
 {
-    private func createTimer()
+    fileprivate func createTimer()
     {
-        refreshTimer = NSTimer.scheduledTimerWithTimeInterval(TIME_REFRESH_INTERVAL, target: self, selector: Selector("refreshData"), userInfo: nil, repeats: true)
+        refreshTimer = Timer.scheduledTimer(timeInterval: TIME_REFRESH_INTERVAL, target: self, selector: #selector(ViewController.refreshData), userInfo: nil, repeats: true)
         refreshTimer?.fire()
     }
     
-    private func deleteTimer()
+    fileprivate func deleteTimer()
     {
         refreshTimer?.invalidate()
         refreshTimer = nil
@@ -92,16 +92,16 @@ extension ViewController: DataSourceDelegate
         if let currentDate = dataSource.currentDate
         {
             dateFormatter.dateFormat = "EEEE"
-            let weekDay = dateFormatter.stringFromDate(currentDate)
+            let weekDay = dateFormatter.string(from: currentDate as Date)
             
             dateFormatter.dateFormat = "dd"
-            let day = dateFormatter.stringFromDate(currentDate)
+            let day = dateFormatter.string(from: currentDate as Date)
             
             dateFormatter.dateFormat = "MMMM"
-            let month = dateFormatter.stringFromDate(currentDate)
+            let month = dateFormatter.string(from: currentDate as Date)
             
             dateFormatter.dateFormat = "HH'h' mm'm' ss's'"
-            let time = dateFormatter.stringFromDate(currentDate)
+            let time = dateFormatter.string(from: currentDate as Date)
             
             view?.refreshDate(weekDay: weekDay, day: day, month: month, time: time)
         }
