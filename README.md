@@ -6,12 +6,12 @@ This project will guide you setting up your environment to build and run a sampl
 
 Make sure you have the following software installed before beginning:
 
-- Latest version of Xcode (8.2.1)
-- Recent version of the iOS SDK (at least 10.0)
+- Latest version of Xcode (10.1)
+- Recent version of the iOS SDK (at least 12.0)
 
 You can download these from the [Apple Developer website](https://developer.apple.com/downloads/).
 
-> **NOTE:** You need a Mac computer running macOS 10.11.5 or later. If you don't have one, you may check our [Sample Android app](https://github.com/mirego/csgames-sample-android/), which can be run on Windows, Linux and older versions of macOS.
+> **NOTE:** You need a Mac computer running macOS 10.13.6 or later. If you don't have one, you may check our [Sample Android app](https://github.com/mirego/csgames-sample-android/), which can be run on Windows, Linux and older versions of macOS.
 
 ## Getting started
 
@@ -54,7 +54,7 @@ If you have questions about the project or encounter any problem while configuri
 
 ## License
 
-This sample app is © 2016 [Mirego](http://www.mirego.com) and may be freely
+This sample app is © 2019 [Mirego](http://www.mirego.com) and may be freely
 distributed under the [New BSD license](http://opensource.org/licenses/BSD-3-Clause).
 See the [`LICENSE.md`](https://github.com/mirego/csgames-sample-ios/blob/master/LICENSE.md) file.
 
